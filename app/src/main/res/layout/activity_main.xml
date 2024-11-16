@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:padding="9dp"
+    android:background="@drawable/light_background">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Find Books"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="10dp"
+        android:textColor="#000000" />
+
+    <LinearLayout
+        android:id="@+id/search_books"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        tools:ignore="ExtraText">
+
+        <!--edit text for getting the search
+            query for book from user-->
+        <EditText
+            android:id="@+id/searchBooks_editText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Search for books"
+            android:layout_marginTop="20dp"
+            android:minHeight="48dp"
+            android:textColorHint="#020202" />
+
+        <!--image button for our search button -->
+        <ImageButton
+            android:id="@+id/search_btn"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="#FFFFFF"
+            android:src="@drawable/search"
+            />  <!-- Replace with your search icon drawable -->
+        android:contentDescription="Search" />
+
+    </LinearLayout>
+
+    <!--recycler view for displaying our list of books-->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        android:layout_height="match_parent"
+        android:layout_below="@id/search_books" />
+
+    <!--progressbar for displaying our loading indicator-->
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone" />
+
+
+</LinearLayout>
